@@ -20,7 +20,7 @@
         "yarn.lock": true,
         "global.d.ts": true,
         // "tsconfig.json": true,
-        ".storybook": true,
+        // ".storybook": true,
         ".npmignore": true
         //".vscode": true
     },

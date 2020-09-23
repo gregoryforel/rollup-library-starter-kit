@@ -35,14 +35,31 @@ module.exports = {
                 // include: path.resolve(__dirname, '../src'),
                 exclude: [/node_modules/, /build/, /dist/, /webpack/]
             },
+            // {
+            //     test: /\.css$/,
+            //     use: [
+            //         {
+            //             loader: 'postcss-loader'
+            //         }
+            //     ],
+            //     include: path.resolve(__dirname, '../')
+            // },
+            // Filter out the default .css rule.
+            ...config.module.rules.filter((rule) => /\.css$/ !== rule.test),
+            // Add our own css rule which in turn will read the postcss.config.js from project root.
             {
-                test: /\.css$/,
+                test: /\.css1$/,
+                exclude: [/\.module\.css$/, /@storybook/],
                 use: [
                     {
-                        loader: 'postcss-loader'
+                        loader: 'postcss-loader',
+                        options: {
+                            path: '../postcss.config.js',
+                            ident: 'postcss',
+                            sourceMap: false
+                        }
                     }
-                ],
-                include: path.resolve(__dirname, '../')
+                ]
             },
             {
                 // ANTD less
