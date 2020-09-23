@@ -1,0 +1,16 @@
+// Workspace settings
+{
+  // The following will hide the js and map files in the editor
+  "files.exclude": {
+    // "**/*.js": true,
+    // "**/*.map": true,
+    "node_modules/": true,
+    "webpack.config.common.js": true,
+    "webpack.config.dev.js": true,
+    "webpack.config.prod.js": true,
+    "tsconfig-for-webpack.json": false,
+    "vscode_custom_css.policy": true
+    //".vscode": true
+},
+"dimmer.enabled": false
+}
