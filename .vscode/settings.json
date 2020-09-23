@@ -11,7 +11,7 @@
         "tsconfig-for-webpack.json": false,
         "vscode_custom_css.policy": true,
         "rollup.config.js": true,
-        ".gitignore": true,
+        // ".gitignore": true,
         "jest.setup.ts": true,
         "jest.config.js": true,
         ".prettierrc": true,
