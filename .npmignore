@@ -1,0 +1,8 @@
+.*
+.vscode
+.babelrc
+**/*tsconfig*
+**/*webpack*
+**/package-lock.json
+node_modules
+src
