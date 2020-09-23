@@ -19,7 +19,7 @@
         "tslint.json": true,
         "yarn.lock": true,
         "global.d.ts": true,
-        "tsconfig.json": true,
+        // "tsconfig.json": true,
         ".storybook": true
         //".vscode": true
     },

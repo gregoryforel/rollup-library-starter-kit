@@ -28,7 +28,10 @@ export default {
         image(),
         json(),
         commonjs(),
-        typescript({ useTsconfigDeclarationDir: true }),
+        typescript({
+            useTsconfigDeclarationDir: true,
+            cwd: `${process.cwd()}/typings`
+        }),
         postcss({
             modules: true,
             extract: true
