@@ -8,7 +8,7 @@ import styles from './TestComponent.module.less'
 export const TestComponent: React.FC<TestComponentProps> = ({ theme }) => (
     <div
         data-testid="test-component"
-        className={`test-component test-component-${theme}`}
+        // className={`test-component test-component-${theme}`}
     >
         <h1 className={styles.test}>I'm the test component</h1>
         <Button>Test</Button>
