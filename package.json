@@ -1,6 +1,6 @@
 {
-    "name": "@nodeject/uic",
-    "version": "1.0.0",
+    "name": "@schedio/react-components",
+    "version": "0.0.2",
     "description": "React components",
     "main": "build/cjs/index.js",
     "module": "build/esm/index.es.js",
@@ -16,7 +16,7 @@
     },
     "homepage": "https://bitbucket.org/schedioapp/ui-components.git#readme",
     "author": "Greg Forel",
-    "license": "Proprietary",
+    "license": "MIT",
     "peerDependencies": {
         "antd": ">=4.6.5",
         "react": ">=16.8.0",

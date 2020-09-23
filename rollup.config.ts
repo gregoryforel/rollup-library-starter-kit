@@ -29,12 +29,12 @@ export default {
         json(),
         commonjs(),
         typescript({
-            useTsconfigDeclarationDir: true,
-            cwd: `${process.cwd()}/typings`
+            useTsconfigDeclarationDir: true
         }),
         postcss({
-            modules: true,
-            extract: true
+            minimize: true,
+            modules: true
+            // extract: true
         })
     ]
 }
