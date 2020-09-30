@@ -28,8 +28,8 @@ export default {
     plugins: [
         peerDepsExternal(),
         resolve(),
-        image(),
-        json(),
+        // image(),
+        // json(),
         commonjs(),
         typescript({
             useTsconfigDeclarationDir: true
@@ -44,8 +44,16 @@ export default {
             extensions: ['css', '.less'],
             minimize: true,
             modules: true,
-            use: { sass: null, stylus: null, less: { javascriptEnabled: true } } //, modifyVars: antdVars }},
-            // extract: true
+            use: {
+                sass: null,
+                stylus: null,
+                less: { javascriptEnabled: true }
+            }, //, modifyVars: antdVars }},,
+            extract: true
+            // config: {
+            //     path: './postcss.config.js',
+            //     ctx: null
+            // }
         })
         // tailwind({
         //     input: 'build/', // required

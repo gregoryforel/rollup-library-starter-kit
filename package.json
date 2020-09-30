@@ -12,9 +12,9 @@
     "typings": "typings/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "git+https://bitbucket.org/schedioapp/ui-components.git"
+        "url": "git+https://github.com/gregoryforel/rollup-library-starter-kit.git"
     },
-    "homepage": "https://bitbucket.org/schedioapp/ui-components.git#readme",
+    "homepage": "https://github.com/gregoryforel/rollup-library-starter-kit.git#readme",
     "author": "Greg Forel",
     "license": "MIT",
     "peerDependencies": {
