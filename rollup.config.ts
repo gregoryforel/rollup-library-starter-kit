@@ -29,7 +29,6 @@ export default {
     plugins: [
         peerDepsExternal(),
         postcss({
-            // extensions: ['css', '.less'],
             minimize: true,
             modules: true,
             use: {
@@ -50,11 +49,5 @@ export default {
         typescript({
             useTsconfigDeclarationDir: true
         })
-        // tailwind({
-        //     input: 'build/esm/index.es.css', // required
-        //     // Tailor the emitted stylesheet to the bundle by removing any unused CSS
-        //     // (highly recommended when packaging for distribution).
-        //     purge: false
-        // })
     ]
 }

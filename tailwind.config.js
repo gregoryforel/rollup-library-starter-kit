@@ -1,21 +1,15 @@
 module.exports = {
     future: {
         // removeDeprecatedGapUtilities: true,
-        // purgeLayersByDefault: true,
+        purgeLayersByDefault: true
     },
     purge: [
-        './src/**/*.css',
         './src/**/*.html',
+        './src/**/*.vue',
         './src/**/*.js',
         './src/**/*.jsx',
         './src/**/*.ts',
-        './src/**/*.ts',
-        './build/**/*.css',
-        './build/**/*.html',
-        './build/**/*.js',
-        './build/**/*.jsx',
-        './build/**/*.ts',
-        './build/**/*.ts'
+        './src/**/*.tsx'
     ],
     theme: {
         extend: {}
