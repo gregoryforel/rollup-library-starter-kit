@@ -10377,7 +10377,7 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-purgecss@^2.0.6, purgecss@^2.3.0:
+purgecss@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-2.3.0.tgz#5327587abf5795e6541517af8b190a6fb5488bb3"
   integrity sha512-BE5CROfVGsx2XIhxGuZAT7rTH9lLeQx/6M0P7DTXQH4IUc3BBzs9JUzt4yzGf3JrH9enkeq6YJBe9CTtkm1WmQ==
@@ -11490,16 +11490,6 @@ rollup-plugin-postcss@^3.1.8:
     rollup-pluginutils "^2.8.2"
     safe-identifier "^0.4.1"
     style-inject "^0.3.0"
-
-rollup-plugin-tailwindcss@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-tailwindcss/-/rollup-plugin-tailwindcss-1.0.0.tgz#26b0a979722a776bf3ebf46f6ffc1aaa8da9c0ff"
-  integrity sha512-BtOZ+T31vBp0vO75MiyIq3VfP8RtVweT3i7dAWtnDQ7M7ncxVZrWIuwTTS39OprsoKbmMB14LDT/bYLKvzswRg==
-  dependencies:
-    postcss "^7.0.26"
-    postcss-load-config "^2.1.0"
-    purgecss "^2.0.6"
-    rollup-pluginutils "^2.8.2"
 
 rollup-plugin-typescript2@^0.27.2:
   version "0.27.2"

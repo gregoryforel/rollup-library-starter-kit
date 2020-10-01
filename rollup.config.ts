@@ -5,7 +5,6 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
-import tailwind from 'rollup-plugin-tailwindcss'
 
 const packageJson = require('./package.json')
 // const antdVars = require('./src/antd-vars');
@@ -42,8 +41,8 @@ export default {
                 ctx: null
             }
         }),
-        // image(),
-        // json(),
+        image(),
+        json(),
         resolve(),
         commonjs(),
         typescript({
