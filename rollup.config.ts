@@ -5,6 +5,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
+import tailwind from 'rollup-plugin-tailwindcss'
 
 const packageJson = require('./package.json')
 // const antdVars = require('./src/antd-vars');
@@ -27,7 +28,6 @@ export default {
     ],
     plugins: [
         peerDepsExternal(),
-
         postcss({
             // extensions: ['css', '.less'],
             minimize: true,
@@ -37,11 +37,11 @@ export default {
                 stylus: null,
                 less: { javascriptEnabled: true }
             }, //, modifyVars: antdVars }},,
-            extract: true
-            // config: {
-            //     path: './postcss.config.js',
-            //     ctx: null
-            // }
+            extract: true,
+            config: {
+                path: './postcss.config.js',
+                ctx: null
+            }
         }),
         // image(),
         // json(),
@@ -50,18 +50,11 @@ export default {
         typescript({
             useTsconfigDeclarationDir: true
         })
-        // postcss({
-        //     extensions: ['.css'],
-        //     minimize: true,
-        //     modules: false,
-        //     extract: true,
-        // }),
-
         // tailwind({
-        //     input: 'build/', // required
+        //     input: 'build/esm/index.es.css', // required
         //     // Tailor the emitted stylesheet to the bundle by removing any unused CSS
         //     // (highly recommended when packaging for distribution).
-        //     purge: false,
-        //   }),
+        //     purge: false
+        // })
     ]
 }
