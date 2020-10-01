@@ -27,21 +27,9 @@ export default {
     ],
     plugins: [
         peerDepsExternal(),
-        resolve(),
-        // image(),
-        // json(),
-        commonjs(),
-        typescript({
-            useTsconfigDeclarationDir: true
-        }),
-        // postcss({
-        //     extensions: ['.css'],
-        //     minimize: true,
-        //     modules: false,
-        //     extract: true,
-        // }),
+
         postcss({
-            extensions: ['css', '.less'],
+            // extensions: ['css', '.less'],
             minimize: true,
             modules: true,
             use: {
@@ -54,7 +42,21 @@ export default {
             //     path: './postcss.config.js',
             //     ctx: null
             // }
+        }),
+        // image(),
+        // json(),
+        resolve(),
+        commonjs(),
+        typescript({
+            useTsconfigDeclarationDir: true
         })
+        // postcss({
+        //     extensions: ['.css'],
+        //     minimize: true,
+        //     modules: false,
+        //     extract: true,
+        // }),
+
         // tailwind({
         //     input: 'build/', // required
         //     // Tailor the emitted stylesheet to the bundle by removing any unused CSS
