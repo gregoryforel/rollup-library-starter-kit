@@ -7,7 +7,17 @@ import resolve from '@rollup/plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
 
 const packageJson = require('./package.json')
-// const antdVars = require('./src/antd-vars');
+
+const fs = require('fs')
+const lessToJs = require('less-vars-to-js')
+const modifyVarsFromJsFile = require('./src/styles/antd-vars')
+const modifyVarsFromLessFile = lessToJs(
+    fs.readFileSync('./src/styles/antd-vars.less', 'utf8')
+)
+
+// Choose here whether to use Less or js file.
+const modifyVars = modifyVarsFromLessFile
+// const modifyVars = modifyVarsFromJsFile
 
 export default {
     input: 'src/index.ts',
@@ -33,8 +43,12 @@ export default {
             use: {
                 sass: null,
                 stylus: null,
-                less: { javascriptEnabled: true }
-            }, //, modifyVars: antdVars }},,
+                less: {
+                    javascriptEnabled: true,
+                    // modifyVars: modifyVarsFromJsFile,
+                    modifyVars
+                }
+            },
             extract: true,
             config: {
                 path: './postcss.config.js',

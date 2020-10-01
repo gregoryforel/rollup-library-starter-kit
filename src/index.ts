@@ -1,2 +1,2 @@
-import './index.tailwind.css'
+import './styles/index.tailwind.css'
 export * from './test-component'

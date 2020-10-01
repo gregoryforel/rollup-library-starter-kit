@@ -11,7 +11,7 @@ export const TestComponent: React.FC<TestComponentProps> = ({ theme }) => (
         // className={`test-component test-component-${theme}`}
     >
         <h1 className={styles.test}>I'm the test component</h1>
-        <Button>Test</Button>
+        <Button type="primary">Test</Button>
         <div className="text-red-500">This text should be red</div>
     </div>
 )

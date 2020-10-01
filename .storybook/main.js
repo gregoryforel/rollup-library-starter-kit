@@ -1,6 +1,16 @@
 const path = require('path')
 const tsImportPluginFactory = require('ts-import-plugin')
 
+const fs = require('fs')
+const lessToJs = require('less-vars-to-js')
+const modifyVarsFromLessFile = lessToJs(
+    fs.readFileSync('src/styles/antd-vars.less', 'utf8')
+)
+const modifyVarsFromJsFile = require('../src/styles/antd-vars')
+
+// Choose here whether modifyVars is the LESS or js file.
+const modifyVars = modifyVarsFromJsFile
+
 module.exports = {
     stories: ['../src/**/*.stories.tsx'],
     // Add any Storybook addons you want here: https://storybook.js.org/addons/
@@ -18,6 +28,7 @@ module.exports = {
                         options: {
                             transpileOnly: true,
                             getCustomTransformers: () => ({
+                                // Antd:
                                 before: [
                                     tsImportPluginFactory([
                                         {
@@ -45,25 +56,8 @@ module.exports = {
                 ],
                 include: path.resolve(__dirname, '../')
             },
-            // Filter out the default .css rule.
-            // ...config.module.rules.filter((rule) => /\.css$/ !== rule.test),
-            // // Add our own css rule which in turn will read the postcss.config.js from project root.
-            // {
-            //     test: /\.css1$/,
-            //     exclude: [/\.module\.css$/, /@storybook/],
-            //     use: [
-            //         {
-            //             loader: 'postcss-loader',
-            //             options: {
-            //                 path: '../postcss.config.js',
-            //                 ident: 'postcss',
-            //                 sourceMap: false
-            //             }
-            //         }
-            //     ]
-            // },
             {
-                // ANTD less
+                // CSS Modules LESS
                 test: /\module.less$/,
                 include: [/src/, /stories/],
                 use: [
@@ -78,8 +72,14 @@ module.exports = {
                     {
                         loader: 'less-loader',
                         options: {
+                            // ANTD less
                             lessOptions: {
-                                javascriptEnabled: true
+                                javascriptEnabled: true,
+                                modifyVars: {
+                                    'primary-color': 'red',
+                                    'link-color': '#1DA57A',
+                                    'border-radius-base': '2px'
+                                }
                             }
                         }
                     }
@@ -99,8 +99,14 @@ module.exports = {
                     {
                         loader: 'less-loader',
                         options: {
+                            // ANTD less
                             lessOptions: {
-                                javascriptEnabled: true
+                                javascriptEnabled: true,
+                                modifyVars: {
+                                    'primary-color': 'red',
+                                    'link-color': '#1DA57A',
+                                    'border-radius-base': '2px'
+                                }
                             }
                         }
                     }
